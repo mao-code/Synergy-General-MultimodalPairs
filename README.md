@@ -13,15 +13,19 @@ This research aims to collaboratively generate data using multimodal large langu
 
 ## Steps
 1. Using a multimodal language model (MLLM) or a large language model (LLM), a simple initial description is randomly generated through a fixed prompt.
+   
 $$ D^{init} \space = H(P) $$
 
-2. The description is then given to a text-to-image model (G) to generate a corresponding image (M).
+1. The description is then given to a text-to-image model (G) to generate a corresponding image (M).
+   
 $$ M_1 = G(D^{init}) $$
 
-3. The image and a fixed instruction (I) are then given to the LLM (F) to generate a corresponding variant description ($D^{variant}$). The variant description is then used to generate an image by the text-to-image model (back to step 2).
+1. The image and a fixed instruction (I) are then given to the LLM (F) to generate a corresponding variant description ($D^{variant}$). The variant description is then used to generate an image by the text-to-image model (back to step 2).
+   
 $$ D^{variant}_1 = F(I, M_1) $$
 
-4. Steps 2-4 are repeated to generate many image-description pairs. The stopping criteria is when the number of iterations reaches the maximum number set.
+1. Steps 2-4 are repeated to generate many image-description pairs. The stopping criteria is when the number of iterations reaches the maximum number set.
+   
 $$ \begin{align*} 
     G(D_i) &= M_{i+1} \\
     F(I, M_i) &= D^{variant}_i 
@@ -38,4 +42,5 @@ $$ \begin{align*}
 \end{align*} $$
 
 In the process of experiment, it can be found that generating too many initial descriptions at once is not good. Therefore, we use multiple batches to generate initial descriptions. Therefore, the final dataset will be ⇒ batch number number of initial descriptions in a single batch number of iterations to generate variants for each initial description.
+
 $$S_{b \times m \times n}$$
