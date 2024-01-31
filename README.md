@@ -44,3 +44,8 @@ $$ \begin{align*}
 In the process of experiment, it can be found that generating too many initial descriptions at once is not good. Therefore, we use multiple batches to generate initial descriptions. Therefore, the final dataset will be ⇒ batch number number of initial descriptions in a single batch number of iterations to generate variants for each initial description.
 
 $$S_{b \times m \times n}$$
+
+# Reference
+* [A Survey on Multimodal Large Language Models](https://arxiv.org/pdf/2306.13549.pdf)
+* [Visual Instruction Tuning](https://arxiv.org/pdf/2304.08485.pdf)
+* [Prismer: A Vision-Language Model with An Ensemble of Experts](https://arxiv.org/pdf/2303.02506.pdf)
