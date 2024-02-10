@@ -31,6 +31,11 @@ $$ \begin{align*}
     F(I, M_i) &= D^{variant}_i 
 \end{align*} $$
 
+## Evaluation
+We trained LLaVA-v1.3-vicuna-7b (a lower-parameter multimodal LLMs compared to the generation model) on our dataset, which varies in size from 1,000 to 7,000 instances. We employed an evaluation method using the mean BERTScore (focusing on recall), based on the descriptions of 100 images with the output of GPT-4 to assess the performance post-training on our dataset. 
+
+Our findings revealed a positive correlation between the training dataset size and the mean BERTScores. This trend suggests that the method employed for dataset generation has the potential to incrementally improve the image description capabilities of multimodal LLMs (MLLMs).
+
 ## Conclusion
 In conclusion, for different topics, the initial descriptions $D_i^{init}$ will generate a set of text-photo pairs with slightly different descriptions ($D_{i,j}, M_{i,j}$). Finally, the overall dataset of different initial descriptions $S_{m\times n}$ is obtained, where $m$ is the number of initial descriptions and $n$ is the number of iterations to generate variants for each initial description. As can be seen from the following equation, the final dataset is highly dependent on the initial descriptions, as well as the performance of the text-to-image model. The image-to-text model is also important, but it is usually the target model that you want to approximate.
 
@@ -44,8 +49,3 @@ $$ \begin{align*}
 In the process of experiment, it can be found that generating too many initial descriptions at once is not good. Therefore, we use multiple batches to generate initial descriptions. Therefore, the final dataset will be ⇒ batch number number of initial descriptions in a single batch number of iterations to generate variants for each initial description.
 
 $$S_{b \times m \times n}$$
-
-# Reference
-* [A Survey on Multimodal Large Language Models](https://arxiv.org/pdf/2306.13549.pdf)
-* [Visual Instruction Tuning](https://arxiv.org/pdf/2304.08485.pdf)
-* [Prismer: A Vision-Language Model with An Ensemble of Experts](https://arxiv.org/pdf/2303.02506.pdf)
