@@ -32,9 +32,9 @@ $$ \begin{align*}
 \end{align*} $$
 
 ## Evaluation
-We trained LLaVA-v1.3-vicuna-7b (a lower-parameter multimodal LLMs compared to the generation model) on our dataset, which varies in size from 1,000 to 7,000 instances. We employed an evaluation method using the mean BERTScore (focusing on recall), based on the descriptions of 100 images with the output of GPT-4 to assess the performance post-training on our dataset. 
+We trained LLaVA-v1.3-vicuna-7b (a lower-parameter multimodal LLMs compared to the generation model) on our dataset, which varies in size from 1,000 to 7,000 instances. We employed an evaluation method using the mean BERTScore (focusing on recall), BLEU and ROUGE-L score based on the descriptions of 100 images with the output of GPT-4 to assess the performance post-training on our dataset. 
 
-Our findings revealed a positive correlation between the training dataset size and the mean BERTScores. This trend suggests that the method employed for dataset generation has the potential to incrementally improve the image description capabilities of multimodal LLMs (MLLMs).
+Our findings of the increase in mean BERT Score, BLEU, and ROUGE-L scores with larger dataset sizes indicates a positive correlation between dataset size and the descriptive capabilities of the models. Additionally, the decrease in the standard deviation of the BERT Score suggests improved consistency in model performance across different dataset sizes. 
 
 ## Conclusion
 In conclusion, for different topics, the initial descriptions $D_i^{init}$ will generate a set of text-photo pairs with slightly different descriptions ($D_{i,j}, M_{i,j}$). Finally, the overall dataset of different initial descriptions $S_{m\times n}$ is obtained, where $m$ is the number of initial descriptions and $n$ is the number of iterations to generate variants for each initial description. As can be seen from the following equation, the final dataset is highly dependent on the initial descriptions, as well as the performance of the text-to-image model. The image-to-text model is also important, but it is usually the target model that you want to approximate.
