@@ -1,7 +1,9 @@
 # Synergy-General-MultimodalPairs
 
 <div style="text-align: center;">
-    <a href="https://link.springer.com/chapter/10.1007/978-981-97-6125-8_12">Paper</a> &nbsp;|&nbsp; <a href="https://huggingface.co/datasets/MaoXun/Synergy-General-MultimodalPairs">🤗 HuggingFace Dateset Link</a>
+    <a href="https://link.springer.com/chapter/10.1007/978-981-97-6125-8_12">Paper</a> &nbsp;|&nbsp; 
+    <a href="https://huggingface.co/datasets/MaoXun/Synergy-General-MultimodalPairs">🤗 HuggingFace Dateset Link</a> &nbsp;|&nbsp;
+    <a href="https://huggingface.co/MaoXun/llava-lora-7-20-10-5-vicuna-7b-v1.3">🤗 HuggingFace LoRA Model</a>
 </div>
 
 ---
